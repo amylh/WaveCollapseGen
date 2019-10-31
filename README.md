@@ -68,6 +68,7 @@ For the poster session demo, we hope to show:
 
 ## Platform Choice
 First, we plan to parallelize the WFC algorithm in C++ using multi-core CPU code. We are using C++ because much of the starter code we plan to use is written in C++, and the language is relatively fast and familiar to us. We also believe using multi-core CPU is suitable because active, non-adjacent cells can perform work independently on separate cores.
+
 We also plan to parallelize the WFC with CUDA on a GPU. We believe this may be effective in improving locality and caching behavior for adjacent cells that are performing work in parallel, since CUDA has features that take advantage of blocking parallel threads.
 
 ## Schedule
