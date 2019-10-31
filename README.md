@@ -36,6 +36,7 @@ We believe step 4.1 may be parallelized, i.e. we choose multiple starting cells 
 For large images (and even more so for higher dimensional grids), it can take a long time to generate the output due to the large amount of cells in the image. But there are several challenges in parallelizing the algorithm to make it faster:
 
 * **Cell Neighbour Dependencies**: Whenever a cell is collapsed, all of its neighbors must also be updated. This may lead to contention if two neighbors are both collapsed in parallel.
+* **Square-in-Square Access**:  When we access a cell, we also access all the pixels in it. We have to be careful to arrange the pixels in memory in a way that does not lead to false sharing.
 * **Non-uniform Access Patterns**: Since starting cells and patterns are chosen randomly, and the propagation of updates may occur in random directions, the array accesses will also be random and could lead to bad caching behavior. However, we believe there may be some degree of locality since updates are propagated through neighbors.
 * **Contradictions**: In the event that we run into a contradiction while generating an image (i.e. a cell cannot be collapsed in any way without violating a constraint/local similarity), we need a way to stop execution of all cores and backtrack/reset the generation process fast.
 
@@ -52,11 +53,11 @@ We may also reference a 2009 paper by Paul C. Merrell, which was the basis for G
 ## Goals and Deliverables
 
 ### Plan to Achieve
-* Parallel WFC (multi-core CPU) for 2D bitmap images, with at least 5x speedup
-* Parallel WFC (CUDA on GPU) for 2D bitmap images, with at least 5x speedup
-* For both of the above, should have improved locality / caching and methods to handle cell contention and contradictory states
+* Parallel WFC (multi-core CPU) for 2D bitmap images, with nontrivial speedup
+* Should have improved locality / caching and methods to handle cell contention and contradictory states
 
 ### Hope to Achieve
+* Parallel WFC (CUDA on GPU) for 2D bitmap images, with nontrivial speedup
 * Parallel WFC (multi-core CPU) for 3D grids
 * Parallel WFC (CUDA on GPU) for 3D grids
 
