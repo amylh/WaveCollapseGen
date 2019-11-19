@@ -1,3 +1,5 @@
+# Project Checkpoint
+
 ## Summary
 
 The first step was to gain an understanding of the implementation of the algorithm to analyze the performance and identify bottlenecks upon which to focus our efforts. After reading through the C++ code we identified the following functions that would take up most of the execution time and have potential for parallelization:
