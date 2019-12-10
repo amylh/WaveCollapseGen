@@ -180,3 +180,10 @@ In the future, we would like to further research parallel implementations of the
 
 ## References
 
+Gumin, Maxim. 2016, v1, WaveFunctionCollapse. https://github.com/mxgmn/WaveFunctionCollapse
+
+Ernerfeldt, Emil. 2016, v1, Wave Function Collapse in C++. https://github.com/emilk/wfc
+
+Merrell, Paul C. Model Synthesis. 2009. University of North Carolina at Chapel Hill, PhD dissertation. Accessed at http://graphics.stanford.edu/~pmerrell/thesis.pdf
+
+
