@@ -2,7 +2,7 @@
 
 ### Jan Orlowski and Amy Lee
 Website: [Parallel Wave Function Collapse](https://amylh.github.io/WaveCollapseGen/)
-Other Material: Checkpoint | Proposal
+Other Material: [Checkpoint](https://amylh.github.io/WaveCollapseGen/texts/wfc-checkpoint.pdf) | [Proposal](https://amylh.github.io/WaveCollapseGen/texts/wfc-proposal.pdf)
 
 ## Summary
 
