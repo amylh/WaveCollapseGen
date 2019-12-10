@@ -35,6 +35,7 @@ Below is a high-level description of the (sequential) algorithm, adapted from th
    1. Pick arbitrary cell(s) and randomly set one of its patterns to `true`.
    2. Reduce the possibilities of its neighboring cell depending on their _compatibility_ with its pattern. These compatibilities are defined in the input.
 5. By now all the cell must be either in a completely observed state (all the coefficients except one being zero) or in the contradictory state (all the coefficients being zero). In the first case return the output. In the second case we exit without returning anything.
+
 ---
 
 We profiled the original sequential code to identify which step was the most computationally intensive. The figure below shows the results of our investigation:
@@ -53,6 +54,7 @@ Here is how the propagation algorithm is implemented in C++:
 - While there is any tile that is still marked as changed:
   - For each tile in the grid:
     - If the tile is marked as changed, check if any of its neighbors have their possibilities limited by the change in the tile. For each neighbor that does, eliminate those possibilities and mark the neighbor as changed. Unmark the current tile.
+
 ---
 
 The reason parallelizing this algorithm is tricky is for the following reasons:
